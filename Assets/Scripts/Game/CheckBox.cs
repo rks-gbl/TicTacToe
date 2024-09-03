@@ -52,7 +52,7 @@ public class CheckBox : MonoBehaviour
         }
     }
 
-    public void OnPointerEnter()
+    void OnPointerEnter()
     {
         if(occupied || !GameManager.Instance.gameStarted)
         return;
@@ -60,7 +60,7 @@ public class CheckBox : MonoBehaviour
         image.color = highlightedColor;
     }
 
-    public void OnPointerExit()
+    void OnPointerExit()
     {
         if(occupied || !GameManager.Instance.gameStarted)
         return;

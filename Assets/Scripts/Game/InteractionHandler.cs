@@ -16,7 +16,7 @@ public class InteractionHandler : MonoBehaviour
     }
     
 
-    public void OnClick()
+    void OnClick()
     {
         foreach(var c in GameManager.Instance.checkBoxes.Values)
         {
