@@ -10,13 +10,8 @@ namespace RitikUtils
         public static int boardSize; 
         public static int matchSize;
 
-        public static void InitializeBoard(ref char[,] board, int _boardSize=-1)
+        public static void InitializeBoard(ref char[,] board)
         {
-            if(_boardSize == -1)
-                return;
-
-            boardSize = _boardSize;
-            
             if(boardSize > 4)
                 matchSize = boardSize - 1;
 

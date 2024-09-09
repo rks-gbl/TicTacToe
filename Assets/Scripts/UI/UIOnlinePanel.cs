@@ -8,6 +8,7 @@ public class UIOnlinePanel : UIPanel
 {
     [SerializeField] Button random , playWithFriends , bot , back;
 
+    [System.Obsolete]
     void Awake()
     {
         random.onClick.AddListener(RandomMM);
@@ -16,9 +17,10 @@ public class UIOnlinePanel : UIPanel
         back.onClick.AddListener(Back);
     }
 
+    [System.Obsolete]
     void RandomMM()
     {
-
+        APIManager.Instance.FindRandomMatch();
     }
 
     void PrivateMM()

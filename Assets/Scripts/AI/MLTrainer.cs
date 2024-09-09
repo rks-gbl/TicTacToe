@@ -7,10 +7,12 @@ using RitikUtils;
 public class MLTrainer : Agent
 {
     [HideInInspector] public int turnNum;
+    public int size = 5;
     public char[,] board;
     public void StartGame()
     {
-        TictactoeUtils.InitializeBoard(ref board, 5);
+        TictactoeUtils.boardSize = size;
+        TictactoeUtils.InitializeBoard(ref board);
     }
 
     public void PlayerMove()

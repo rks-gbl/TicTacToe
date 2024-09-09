@@ -8,7 +8,7 @@ public class DataManager : MPersistentSingleton<DataManager>
 
     public PlayerData GetOpponentData()
     {
-        return new PlayerData("Player 2" , 1 , null);
+        return new PlayerData(null,"Player 2" , 1 , null);
     }
 
     public void Start()

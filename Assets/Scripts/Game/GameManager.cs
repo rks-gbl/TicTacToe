@@ -12,7 +12,6 @@ public class GameManager : MPersistentSingleton<GameManager>
     [SerializeField] CheckboxPool checkBoxPool;
     [SerializeField] GameObject vert , hor , diagLeft , diagRight;
     
-    int boardSize=0;
     AIManager ai;
     public AIManager AI
     {
@@ -39,7 +38,7 @@ public class GameManager : MPersistentSingleton<GameManager>
 
     public void InitializeBoard()
     {
-        TictactoeUtils.InitializeBoard(ref board, boardSize);
+        TictactoeUtils.InitializeBoard(ref board);
     }
     
     public bool IsP1Turn()
@@ -104,12 +103,12 @@ public class GameManager : MPersistentSingleton<GameManager>
 
     public void SetBoardSize(int size)
     {
-        boardSize = size;
+        TictactoeUtils.boardSize = size;
     }
 
     public void StartGame(GameMode mode , BotType botType)
     {
-        BoardGenerator.Instance.Generate(boardSize);
+        BoardGenerator.Instance.Generate(TictactoeUtils.boardSize);
         InitializeBoard();
 
         vert.SetActive(false);
