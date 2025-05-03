@@ -33,7 +33,7 @@ public class InteractionHandler : MonoBehaviour
         if(!GameManager.Instance || !GameManager.Instance.gameStarted)
             return;
         
-        if(!GameManager.Instance.IsP1Turn() && GameManager.Instance.gameMode != GameMode.OfflineTwoPlayer)
+        if(!GameManager.Instance.IsP1Turn() && (GameManager.Instance.connectionMode != ConnectionMode.Offline || GameManager.Instance.gameMode == GameMode.Bot))
             return;
             
         mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

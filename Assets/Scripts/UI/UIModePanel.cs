@@ -23,12 +23,14 @@ public class UIModePanel : UIPanel
 
     void OnOnlineClicked()
     {
+        GameManager.Instance.connectionMode = ConnectionMode.Online;
         UIManager.Instance.EnablePanel(Consts.UIOnlinePanel);
         Disable();
     }
 
     void OnOfflineClicked()
     {
+        GameManager.Instance.connectionMode = ConnectionMode.Offline;
         UIManager.Instance.EnablePanel(Consts.UIOfflinePanel);
         Disable();
     }

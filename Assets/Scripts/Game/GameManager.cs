@@ -11,6 +11,8 @@ public class GameManager : MPersistentSingleton<GameManager>
     public GameObject AIPrefab;
     [SerializeField] CheckboxPool checkBoxPool;
     [SerializeField] GameObject vert , hor , diagLeft , diagRight;
+
+    public ConnectionMode connectionMode;
     
     AIManager ai;
     public AIManager AI

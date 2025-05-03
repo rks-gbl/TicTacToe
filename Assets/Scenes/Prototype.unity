@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData:
+    id: 461e05a3-6d55-4180-a650-92a63a67049e
     Name: Player 1
     Level: 1
     ProfileImage: 

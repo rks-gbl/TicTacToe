@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using RitikUtils;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -19,6 +20,11 @@ public class SoundManager : MPersistentSingleton<SoundManager>
 
         bgm.loop = true;
         bgm.Play();
+    }
+
+    void Update()
+    {
+        
     }
 
     public void StopBGM()

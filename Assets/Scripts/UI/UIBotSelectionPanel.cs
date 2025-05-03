@@ -6,42 +6,64 @@ using UnityEngine.UI;
 
 public class UIBotSelectionPanel : UIPanel
 {
-    [SerializeField] Button  easyBot ,normalBot , hardBot , back;
+    [SerializeField] Button  easyBot ,mediumBot , hardBot , back;
 
     void Awake()
     {
-        easyBot.onClick.AddListener(PlayWithEasyBot);
-        normalBot.onClick.AddListener(PlayWithNormalBot);
-        hardBot.onClick.AddListener(PlayWithUnbeatableBot);
+        easyBot.onClick.AddListener(Easy);
+        mediumBot.onClick.AddListener(Medium);
+        hardBot.onClick.AddListener(Hard);
         back.onClick.AddListener(Back);
     }
 
     void OnDestroy()
     {
-        easyBot.onClick.RemoveListener(PlayWithEasyBot);
-        normalBot.onClick.RemoveListener(PlayWithNormalBot);
-        hardBot.onClick.RemoveListener(PlayWithUnbeatableBot);
+        easyBot.onClick.RemoveListener(Easy);
+        mediumBot.onClick.RemoveListener(Medium);
+        hardBot.onClick.RemoveListener(Hard);
         back.onClick.RemoveListener(Back);
     }
 
-    void PlayWithUnbeatableBot()
+    void Hard()
     {
         UIManager.Instance.EnablePanel(Consts.UIGamePanel);
-        GameManager.Instance.StartGame(GameMode.OfflineBot , BotType.Undefeatable);
+        if(GameManager.Instance.connectionMode == ConnectionMode.Offline)
+        {
+            GameManager.Instance.StartGame(GameMode.Bot , BotType.Hard);    
+        }
+        else
+        {
+            MatchmakingHandler.PlayWithBot("easy");
+        }
         Disable();
     }
 
-    void PlayWithNormalBot()
+    void Medium()
     {
         UIManager.Instance.EnablePanel(Consts.UIGamePanel);
-        GameManager.Instance.StartGame(GameMode.OfflineBot , BotType.Normal);
+
+        if(GameManager.Instance.connectionMode == ConnectionMode.Offline)
+        {
+            GameManager.Instance.StartGame(GameMode.Bot , BotType.Medium);    
+        }
+        else
+        {
+            MatchmakingHandler.PlayWithBot("medium");
+        }
         Disable();
     }
 
-    void PlayWithEasyBot()
+    void Easy()
     {
         UIManager.Instance.EnablePanel(Consts.UIGamePanel);
-        GameManager.Instance.StartGame(GameMode.OfflineBot , BotType.Easy);
+        if(GameManager.Instance.connectionMode == ConnectionMode.Offline)
+        {
+            GameManager.Instance.StartGame(GameMode.Bot , BotType.Easy);    
+        }
+        else
+        {
+            MatchmakingHandler.PlayWithBot("hard");
+        }
         Disable();
     }
 

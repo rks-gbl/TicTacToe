@@ -20,17 +20,31 @@ public class UIOnlinePanel : UIPanel
     [System.Obsolete]
     void RandomMM()
     {
-        APIManager.Instance.FindRandomMatch();
+        MatchmakingHandler.JoinRandomGame();
     }
 
     void PrivateMM()
     {
-
     }
 
     void Bot()
     {
+        
+    }
 
+    void BotEasy()
+    {
+        MatchmakingHandler.PlayWithBot("easy");
+    }
+
+    void BotMedium()
+    {
+        MatchmakingHandler.PlayWithBot("medium");
+    }
+
+    void BotHard()
+    {
+        MatchmakingHandler.PlayWithBot("hard");
     }
 
     void Back()

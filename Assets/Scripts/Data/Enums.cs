@@ -1,11 +1,16 @@
+public enum ConnectionMode
+{
+    Online , Offline
+}
+
 public enum GameMode
 {
-    OnlineRandom , OnlineBot , OnlinePrivate ,OfflineBot, OfflineTwoPlayer
+    Random , Private , Bot
 }
 
 public enum BotType
 {
-    None , Easy , Normal , Undefeatable , Online
+    None , Easy , Medium , Hard , Online
 }
 public enum StrikeType
 {

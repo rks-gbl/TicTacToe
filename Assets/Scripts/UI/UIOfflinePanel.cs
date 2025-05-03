@@ -23,7 +23,7 @@ public class UIOfflinePanel : UIPanel
 
     void TwoPlayer()
     {
-        GameManager.Instance.StartGame(GameMode.OfflineTwoPlayer, BotType.None);
+        GameManager.Instance.StartGame(GameMode.Private, BotType.None);
 
         UIManager.Instance.EnablePanel(Consts.UIGamePanel);
         Disable();

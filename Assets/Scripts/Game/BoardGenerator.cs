@@ -42,7 +42,7 @@ public class BoardGenerator : MSingleton<BoardGenerator>
                 box.transform.localScale = new Vector3(1,1,1);
                 box.ResetBounds();
                 if(GameManager.Instance != null){
-                    GameManager.Instance.checkBoxes.Add((i,j),box);
+                    GameManager.Instance.checkBoxes[(i,j)]=box;
                 }
 
                 yield return new WaitForSeconds(generationDelayPerBox);

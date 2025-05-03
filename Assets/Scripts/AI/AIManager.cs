@@ -62,10 +62,10 @@ public class AIManager : MonoBehaviour
             case BotType.Easy:
             GetRandom().SetOccupied();
             break;
-            case BotType.Normal:
+            case BotType.Medium:
             GetNormal().SetOccupied();
             break;
-            case BotType.Undefeatable:
+            case BotType.Hard:
             if(TictactoeUtils.boardSize < 5)
                 GetUndefeatable().SetOccupied();
             else
