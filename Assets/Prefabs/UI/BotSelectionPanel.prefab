@@ -719,7 +719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: BotSelectionPanel
   easyBot: {fileID: 2721668859624848167}
-  normalBot: {fileID: 7418698027176833780}
+  mediumBot: {fileID: 7418698027176833780}
   hardBot: {fileID: 477370527887830952}
   back: {fileID: 1507341219706845511}
 --- !u!1 &3419123259829580254
@@ -1004,7 +1004,7 @@ GameObject:
   - component: {fileID: 2721668859624848167}
   - component: {fileID: 9208800148034076790}
   m_Layer: 5
-  m_Name: EasyBot
+  m_Name: Easy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1419,7 +1419,7 @@ GameObject:
   - component: {fileID: 7418698027176833780}
   - component: {fileID: 3106019291259491246}
   m_Layer: 5
-  m_Name: NormalBot
+  m_Name: Medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

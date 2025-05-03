@@ -25,23 +25,12 @@ public class WebSocketMessageHandler
 {
     public static void HandleStateMessage(string json)
     {
-        try
-        {
-            // Workaround for 2D array parsing:
-            json = json.Replace("\"[", "[").Replace("]\"", "]");
+        var wrapper = JsonUtility.FromJson<BoardWrapper>(json);
 
-            // Parse manually as wrapper
-            var wrapper = JsonUtility.FromJson<BoardWrapper>(json);
+        Debug.Log("Turn: " + wrapper.turn);
+        PrintBoard(wrapper.board);
 
-            Debug.Log("Turn: " + wrapper.turn);
-            PrintBoard(wrapper.board);
-
-            // TODO: Update your UI here
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError("Failed to parse state: " + ex.Message);
-        }
+        // TODO: Update your UI here
     }
 
     static void PrintBoard(string[][] board)

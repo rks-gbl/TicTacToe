@@ -29,22 +29,8 @@ public class UIOnlinePanel : UIPanel
 
     void Bot()
     {
-        
-    }
-
-    void BotEasy()
-    {
-        MatchmakingHandler.PlayWithBot("easy");
-    }
-
-    void BotMedium()
-    {
-        MatchmakingHandler.PlayWithBot("medium");
-    }
-
-    void BotHard()
-    {
-        MatchmakingHandler.PlayWithBot("hard");
+        UIManager.Instance.EnablePanel(Consts.UIBotSelectionPanel);
+        Disable();
     }
 
     void Back()

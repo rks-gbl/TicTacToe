@@ -26,45 +26,46 @@ public class UIBotSelectionPanel : UIPanel
 
     void Hard()
     {
-        UIManager.Instance.EnablePanel(Consts.UIGamePanel);
         if(GameManager.Instance.connectionMode == ConnectionMode.Offline)
         {
+            UIManager.Instance.EnablePanel(Consts.UIGamePanel);
             GameManager.Instance.StartGame(GameMode.Bot , BotType.Hard);    
+            Disable();
         }
         else
         {
             MatchmakingHandler.PlayWithBot("easy");
         }
-        Disable();
     }
 
     void Medium()
     {
-        UIManager.Instance.EnablePanel(Consts.UIGamePanel);
 
         if(GameManager.Instance.connectionMode == ConnectionMode.Offline)
         {
+            UIManager.Instance.EnablePanel(Consts.UIGamePanel);
             GameManager.Instance.StartGame(GameMode.Bot , BotType.Medium);    
+            Disable();
         }
         else
         {
             MatchmakingHandler.PlayWithBot("medium");
         }
-        Disable();
     }
 
     void Easy()
     {
-        UIManager.Instance.EnablePanel(Consts.UIGamePanel);
+        
         if(GameManager.Instance.connectionMode == ConnectionMode.Offline)
         {
+            UIManager.Instance.EnablePanel(Consts.UIGamePanel);
             GameManager.Instance.StartGame(GameMode.Bot , BotType.Easy);    
+            Disable();
         }
         else
         {
             MatchmakingHandler.PlayWithBot("hard");
         }
-        Disable();
     }
 
     void Back()

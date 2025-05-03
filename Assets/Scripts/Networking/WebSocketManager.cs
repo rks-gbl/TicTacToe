@@ -18,7 +18,6 @@ public class WebSocketManager : MSingleton<WebSocketManager>
 
     private void OnMessageReceived(object sender, MessageEventArgs e)
     {
-        Debug.Log("Message from server: " + e.Data);
         string json = e.Data;
         Debug.Log("Received: " + json);
 
